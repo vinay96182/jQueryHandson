@@ -1,0 +1,63 @@
+// todoList.html
+
+
+
+<html>
+    <head>
+        <link rel="stylesheet" href="todoListScript.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>To-Do List</h1>
+        <table>
+            <tr>
+                <td>Task:</td>
+                <td><input type="text" id="newTask"><br></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" id="addTaskBtn" value="Add task"></td>
+            </tr>
+        </table>
+        
+        <p id="tasks">
+            Today's task are:
+        </p>
+        <script src="todoListScript.js"></script>
+    </body>
+</html>
+
+
+
+
+// todoListScript.css
+
+
+
+p {
+    font-size: 15px;
+    width: 500px;
+    color: blue;
+    margin: 0 10px;
+}
+
+
+
+
+// todoListScript.js
+
+
+
+$("#addTaskBtn").click(function addTask(){
+    newTask = $("#newTask").val();
+    if(newTask == ""){
+        alert("Enter task details");
+    }
+    else{
+        oldTasks = $("#tasks").html();
+        newTasks = oldTasks + "<br>" + newTask;
+    
+        $("#newTask").val("");
+        $("#tasks").html(newTasks);
+    }
+});

@@ -1,0 +1,58 @@
+// Search.html
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#par").find("span").hover(function(){
+  $(this).css("background-color", "bisque");
+  }, function(){
+  $(this).css("background-color", "white");});
+
+ $("#par").find("span").each(function(){
+if($(this)=="th$"){
+$(this).css({"font-style":"italic","text-shadow":"2px 2px pink","font-weight":"bold"});
+}
+
+});
+
+});
+
+</script>
+<style>
+#par{
+font-size:20px;
+width:500px;
+color:green;
+margin:0 10px;
+}
+</style>
+</head>
+<body>
+<p id="par"><span>jQuery</span> <span>traversing</span>, <span>which</span> <span>means</span> "<span>move </span> <span>through</span>", <span>are</span> <span>used</span> <span>to</span> "<span>find</span>" (<span>or</span> <span>select</span>) <span>HTML</span> <span>elements</span> <span>based</span> <span>on</span> <span >their</span> <span>relation</span> <span>to</span> <span>other</span> <span>elements</span>. <span>Start</span> <span>with</span> <span>one</span> <span>selection</span> <span>and</span> <span>move</span> <span >through</span> <span >that</span> <span>selection</span> <span>until</span> <span>you</span> <span>reach</span> <span>the</span> <span>elements</span> <span>you</span> <span>desire</span>.</p>
+</body>
+</html>
+
+
+
+
+// Search.js
+
+
+$(document).ready(function(){
+  $("#par").find("span").hover(function(){
+  $(this).css("background-color", "bisque");
+  }, function(){
+  $(this).css("background-color", "white");});
+
+ $("#par").find("span").each(function(){
+if($(this)=="th$"){
+$(this).css({"font-style":"italic","text-shadow":"2px 2px pink","font-weight":"bold"});
+}
+
+});
+
+});

@@ -1,0 +1,109 @@
+// Scores.html
+
+
+<html>
+    <head>
+        <link rel="stylesheet" href="Scores.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>1</td>
+                <td>Math 1</td>
+                <td><input type="text" id="math1Mark"></td>
+            </tr>
+            
+            <tr>
+                <td>2</td>
+                <td>Math 2</td>
+                <td><input type="text" id="math2Mark"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Science</td>
+                <td><input type="text" id="scienceMark"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>English</td>
+                <td><input type="text" id="englishMark"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Sanskrit</td>
+                <td><input type="text" id="sanskritMark"></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Social</td>
+                <td><input type="text" id="socialMark"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="sumLabel">Sum</td>
+                <td><p id="sumValue"></td>
+            </tr>
+
+        </table>
+        
+        <script src="Scores.js"></script>
+    </body>
+</html>
+
+
+
+
+// Scores.css
+
+
+
+body {
+    font-family: sans-serif;
+}
+table{
+    background-color: #E8DCFF;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+table td{
+    border: 1px solid black;
+    padding: 0 10px;
+}
+
+input{
+    background-color: #FEFFB0;
+}
+
+#sumLabel, #sumValue {
+    color: #174C68;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+
+
+// Scores.js
+
+
+
+$("input").keyup(function (){
+    math1Mark = parseFloat($("#math1Mark").val());
+    math2Mark = parseFloat($("#math2Mark").val());
+    scienceMark = parseFloat($("#scienceMark").val());
+    englishMark = parseFloat($("#englishMark").val());
+    sanskritMark = parseFloat($("#sanskritMark").val());
+    socialMark = parseFloat($("#socialMark").val());
+
+    if(isNaN(math1Mark)) math1Mark = 0;
+    if(isNaN(math2Mark)) math2Mark = 0;
+    if(isNaN(scienceMark)) scienceMark = 0;
+    if(isNaN(englishMark)) englishMark = 0;
+    if(isNaN(sanskritMark)) sanskritMark = 0;
+    if(isNaN(socialMark)) socialMark = 0;
+    sum = Number((math1Mark + math2Mark + scienceMark + englishMark + sanskritMark + socialMark).toFixed(2));
+    $("#sumValue").text(sum);
+});
